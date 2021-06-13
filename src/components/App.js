@@ -7,7 +7,7 @@ import Events from './Events'
 import EventForm from './EventForm'
 import Counter from './counter'
 /* Reducer */
-import reducer from '../reducers/index.js'
+import reducer from '../reducers'
 /* Create Context */
 import AppContext from '../contexts/AppContext'
 
@@ -15,8 +15,10 @@ import AppContext from '../contexts/AppContext'
 
 
 const App = () => {
-  
-  const [ state, dispatch] =  useReducer(reducer, [])
+  const initialState = {
+    events: []
+  }
+  const [ state, dispatch] =  useReducer(reducer, initialState)
 
   
   return (

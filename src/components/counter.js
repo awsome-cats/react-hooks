@@ -1,7 +1,7 @@
 
 
 import React, {useState, useReducer} from 'react'
-import reducer from '../reducers/count.js'
+import reducer from '../reducers/count'
 import { INCREMENT } from '../actions'
 
 const initialState = {
