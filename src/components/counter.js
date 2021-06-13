@@ -1,6 +1,6 @@
 
 
-import React, {useState, useReducer} from 'react'
+import React, {useReducer} from 'react'
 import reducer from '../reducers/count.js'
 import { INCREMENT } from '../actions'
 

@@ -16,7 +16,11 @@ const Event = ({ dispatch, event }) => {
     <tr>
       <td>{id}</td>
       <td>{event.title}</td>
+      <td>{event.radioVal}</td>
+      <td>{event.checked.join(', ')}</td>
       <td>{event.body}</td>
+      <td>{event.selectValue}</td>
+      
       <td><button type="button" className="btn btn-danger" onClick={handleClickDeleteButton}>削除</button></td>
     </tr>
   )

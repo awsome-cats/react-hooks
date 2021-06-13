@@ -13,8 +13,10 @@ const Events = ({state,dispatch}) => {
                     <tr>
                     <th>ID</th>
                     <th>タイトル</th>
+                    <th>ラジオ</th>
+                    <th>チェック</th>
                     <th>ボディ</th>
-                    <th></th>
+                    <th>セレクト</th>
                     </tr>
                 </thead>
                 <tbody>
