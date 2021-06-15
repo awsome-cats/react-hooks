@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import Events from './Events'
 import EventForm from './EventForm'
 import Counter from './counter'
+import OperationLogs from './OperationLogs'
 /* Reducer */
 import reducer from '../reducers'
 /* Create Context */
@@ -31,6 +32,7 @@ const App = () => {
           <EventForm />
           <Counter/>
           <Events/>
+          <OperationLogs/>
         </div>
 
       </div>
