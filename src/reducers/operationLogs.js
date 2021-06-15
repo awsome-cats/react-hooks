@@ -1,6 +1,6 @@
 import { 
     ADD_OPERATION_LOG,
-    DELETE_ALL_OPERATION_LOG 
+    DELETE_ALL_OPERATION_LOGS 
  } from '../actions'
 
  const operationLogs = (state = [], action) => {
@@ -14,7 +14,7 @@ import {
 
             return [operationLog, ...state]
 
-        case DELETE_ALL_OPERATION_LOG:
+        case DELETE_ALL_OPERATION_LOGS:
             return []
         default: 
         return state

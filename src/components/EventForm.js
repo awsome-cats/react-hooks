@@ -2,9 +2,18 @@
 
 
 import React, {useState, useContext} from 'react'
-import { CREATE_EVENT, DELETE_ALL_EVENTS } from '../actions/index'
+import { 
+  CREATE_EVENT, 
+  DELETE_ALL_EVENTS, 
+  ADD_OPERATION_LOG,
+  DELETE_ALL_OPERATION_LOGS
+} from '../actions/index'
+
 /* useContext File */
 import AppContext from '../contexts/AppContext'
+
+/** date format */
+import { timeCurrentIso8601 } from '../utiles'
 
 const  EventForm = () =>{
 
@@ -26,6 +35,12 @@ const  EventForm = () =>{
       title, 
       body
     })
+
+    dispatch({
+      type: ADD_OPERATION_LOG,
+      description: 'イベントを作成しました',
+      operatedAt: timeCurrentIso8601()
+    })
  
     setTitle('')
     setBody('')
@@ -39,10 +54,31 @@ const  EventForm = () =>{
     e.preventDefault()
     const result = window.confirm('全てのイベントを削除していいですか')
     
-    if (result)dispatch({
-      type: DELETE_ALL_EVENTS
-    })
+    if (result){
+        dispatch({
+        type: DELETE_ALL_EVENTS
+      })
+
+      dispatch({
+        type: ADD_OPERATION_LOG,
+        description: '全てのイベントを削除しました',
+        operatedAt: timeCurrentIso8601()
+      })
+    }
     
+  }
+
+
+  const deleteAllOperationLogs = (e) => {
+    e.preventDefault()
+
+    const result = window.confirm('全ての操作ログを削除してもいいですか')
+
+    if (result) {
+      dispatch({
+        type: DELETE_ALL_OPERATION_LOGS
+      })
+    }
   }
 
   /** ボタンの状態であるactive disabledを管理する */
@@ -105,6 +141,13 @@ const  EventForm = () =>{
                         disabled={state.events.length === 0}
                         >
                         イベント全削除
+                    </button>
+                    <button 
+                        className="btn btn-danger"
+                        onClick={deleteAllOperationLogs}
+                        disabled={state.operationLogs.length === 0}
+                        >
+                        全操作ログの削除
                     </button>
                     
 
