@@ -145,7 +145,7 @@ const  EventForm = () =>{
                     <button 
                         className="btn btn-danger"
                         onClick={deleteAllOperationLogs}
-                        disabled={state.operationLogs.length === 0}
+                        disabled={state.operationLogs.length == 0}
                         >
                         全操作ログの削除
                     </button>
