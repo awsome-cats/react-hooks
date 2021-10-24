@@ -13,7 +13,7 @@ import {
 import AppContext from '../contexts/AppContext'
 
 /** date format */
-import { timeCurrentIso8601 } from '../utiles'
+import { timeCurrentIso8601 } from '../utilities'
 
 const  EventForm = () =>{
 
@@ -29,7 +29,10 @@ const  EventForm = () =>{
   const addEvent = (e) => {
 
     e.preventDefault()
-
+    /**
+     * 型:dispatch(action)
+     * action = {type: xxxx,stateに代入したいformの値}
+    */
     dispatch({
       type: CREATE_EVENT,
       title,

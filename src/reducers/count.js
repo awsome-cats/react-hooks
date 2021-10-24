@@ -12,8 +12,7 @@ const count =(state = [], action) => {
                    count: 0
                }
            }
- 
-        default: 
+        default:
         return state
     }
 

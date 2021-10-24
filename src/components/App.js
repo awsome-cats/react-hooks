@@ -7,8 +7,8 @@ import Events from './Events'
 import EventForm from './EventForm'
 import Counter from './counter'
 import OperationLogs from './OperationLogs'
-/* Reducer */
-import reducer from '../reducers'
+/* combineReducers */
+import combineReducer from '../reducers'
 /* Create Context */
 import AppContext from '../contexts/AppContext'
 
@@ -25,7 +25,7 @@ const App = () => {
     operationLogs: []
   }
 
-  const [ state, dispatch] =  useReducer(reducer, initialState)
+  const [ state, dispatch] =  useReducer(combineReducer, initialState)
 
   //JSXのレンダリングの後に実行される
   //コンポーネントの中に何度も記述できる

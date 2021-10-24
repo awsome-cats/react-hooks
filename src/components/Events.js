@@ -8,9 +8,9 @@ const Events = () => {
     const { state } = useContext(AppContext)
     return (
         <>
-        
-            
-      
+
+
+
             <h4>イベント一覧</h4>
             <table className="table table-hover">
                 <thead>

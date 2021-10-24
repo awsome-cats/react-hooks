@@ -1,7 +1,7 @@
 
 
 import React, {useState, useReducer} from 'react'
-import reducer from '../reducers/count'
+import countReducer from '../reducers/count'
 import { INCREMENT } from '../actions'
 
 const initialState = {
@@ -12,7 +12,7 @@ const  Counter = () => {
 
 
     // const [ count, setCount ] = useState(0)
-    const [ state, dispatch ] = useReducer(reducer, initialState)
+    const [ state, dispatch ] = useReducer(countReducer, initialState)
 
     const addCount = () => {
         dispatch({
