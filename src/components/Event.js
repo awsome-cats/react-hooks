@@ -5,7 +5,7 @@ import {
   ADD_OPERATION_LOG
 } from '../actions'
 
-import { timeCurrentIso8601} from '../utiles'
+import { timeCurrentIso8601} from '../utilities'
 
 const Event = ({ event }) => {
 
