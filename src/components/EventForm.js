@@ -2,9 +2,9 @@
 
 
 import React, {useState, useContext} from 'react'
-import { 
-  CREATE_EVENT, 
-  DELETE_ALL_EVENTS, 
+import {
+  CREATE_EVENT,
+  DELETE_ALL_EVENTS,
   ADD_OPERATION_LOG,
   DELETE_ALL_OPERATION_LOGS
 } from '../actions/index'
@@ -27,12 +27,12 @@ const  EventForm = () =>{
   // action = {type: 'CREATE_EVENT', title, body}が必要
 
   const addEvent = (e) => {
-    
+
     e.preventDefault()
 
     dispatch({
       type: CREATE_EVENT,
-      title, 
+      title,
       body
     })
 
@@ -41,11 +41,11 @@ const  EventForm = () =>{
       description: 'イベントを作成しました',
       operatedAt: timeCurrentIso8601()
     })
- 
+
     setTitle('')
     setBody('')
     console.log({state})
-    
+
   }
 
   /**全てのイベントを削除する */
@@ -53,7 +53,7 @@ const  EventForm = () =>{
 
     e.preventDefault()
     const result = window.confirm('全てのイベントを削除していいですか')
-    
+
     if (result){
         dispatch({
         type: DELETE_ALL_EVENTS
@@ -65,7 +65,7 @@ const  EventForm = () =>{
         operatedAt: timeCurrentIso8601()
       })
     }
-    
+
   }
 
 
@@ -87,7 +87,7 @@ const  EventForm = () =>{
 
   /**Counter start */
 
-//   const addCount = useCallback(() => 
+//   const addCount = useCallback(() =>
 //     // dispatch({
 //     //   type: 'INCREMENT'
 //     // })
@@ -101,16 +101,16 @@ const  EventForm = () =>{
         <>
             <h4>イベント作成フォーム</h4>
             <form>
-                <div 
+                <div
                     className="form-group">
-                    <label 
+                    <label
                         htmlFor="formEventTitle">
                         タイトル
                     </label>
 
-                    <input 
-                        className="form-control" 
-                        id="formEventTitle" 
+                    <input
+                        className="form-control"
+                        id="formEventTitle"
                         value={title}
                         onChange={(e) => setTitle(e.target.value)}/>
                 </div>
@@ -119,42 +119,42 @@ const  EventForm = () =>{
                     <label htmlFor="formEventBody">
                     ボディ
                     </label>
-                    <textarea 
+                    <textarea
                         className="
-                        form-control 
-                        mb-3" 
-                        id="formEventBody" 
-                        value={body} 
+                        form-control
+                        mb-3"
+                        id="formEventBody"
+                        value={body}
                         onChange={(e) => setBody(e.target.value)}
                     />
-                    
-                    <button 
+
+                    <button
                         className="btn btn-primary"
                         disabled={unCreatable}
                         onClick={addEvent}>
                         イベント新規作成
                     </button>
 
-                    <button 
+                    <button
                         className="btn btn-danger"
                         onClick={deleteAllEvents}
                         disabled={state.events.length === 0}
                         >
                         イベント全削除
                     </button>
-                    <button 
+                    <button
                         className="btn btn-danger"
                         onClick={deleteAllOperationLogs}
                         disabled={state.operationLogs.length == 0}
                         >
                         全操作ログの削除
                     </button>
-                    
+
 
                 </div>
 
-                
-            </form>  
+
+            </form>
         </>
     )
 }

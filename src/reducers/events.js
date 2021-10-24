@@ -3,7 +3,7 @@
 // clickEventでデータを作成し,追加する
 // action = { type: 'CREATE_EVENT', title: '', body: ''}
 
-import { 
+import {
    DELETE_EVENT,
    CREATE_EVENT ,
    DELETE_ALL_EVENTS
@@ -17,11 +17,11 @@ const events =(state = [], action) => {
             const id = length === 0 ? 1: state[length -1].id + 1
             return [...state, {id, ...event }]
         case DELETE_EVENT:
-            return state.filter(event => event.id !== action.id)  
-            
+            return state.filter(event => event.id !== action.id)
+
         case DELETE_ALL_EVENTS:
             return []
-        default: 
+        default:
         return state
     }
 

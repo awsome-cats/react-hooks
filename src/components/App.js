@@ -40,11 +40,10 @@ const App = () => {
 
   }, [state])
 
-  
+
   return (
     <AppContext.Provider value={{ state, dispatch}}>
       <div className="container-fluid">
-        
         <div className="mt-5">
           <EventForm />
           <Counter/>

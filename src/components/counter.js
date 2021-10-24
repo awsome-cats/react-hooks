@@ -24,7 +24,7 @@ const  Counter = () => {
 
     return (
         <div>
-            <button 
+            <button
                 className="btn btn-info"
                 type="button"
                 onClick={addCount}
